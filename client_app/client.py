@@ -4,7 +4,7 @@ import asyncio
 from settings import API_URL
 
 
-class ApiClient:
+class Client:
     """
     Client for test api
     """
@@ -71,7 +71,7 @@ class ApiClient:
 
 
 async def main():
-    test_api_client = ApiClient(API_URL)
+    test_api_client = Client(API_URL)
 
     token = await test_api_client.auth_request(login="test", password="12345")
     print(token)
