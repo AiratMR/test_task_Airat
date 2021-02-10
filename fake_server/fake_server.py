@@ -24,7 +24,17 @@ async def get_user(request):
     """
     Returns fake user info
     """
-    token = request.rel_url.query['token']
+    token = request.rel_url.query["token"]
+    if token != "dsfd79843r32d1d3dx23d32d":
+        return web.json_response({
+            "status": "ERROR"
+        })
+
+    username = request.match_info["username"]
+    if username != "ivanov":
+        return web.json_response({
+            "status": "NOT FOUND"
+        })
 
     response = {
         "status": "OK",
